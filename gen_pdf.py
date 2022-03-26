@@ -4,11 +4,11 @@ import csv
 import os
 import pypandoc
 
-folder = "./_data/summer/"
+folder = "../projectyl.github.io/_data/summer/"
 files = os.listdir(folder)
 files = [file for file in files if ".csv" in file]
-md_file = "./_data/summer/summer.md"
-pdf_file = "./_data/summer/summer.pdf"
+md_file = "../projectyl.github.io/_data/summer/summer.md"
+pdf_file = "../projectyl.github.io/_data/summer/summer.pdf"
 
 f = open(md_file, 'w')
 f.close()
@@ -24,7 +24,8 @@ f.write('\\pagecolor{lyellow}\n')
 f.write("\\section*{\\textcolor{blue}{Summer Internship Programs}}\n")
 f.write('\\vspace{-20pt}\n\\rule{\\textwidth}{2pt}\n\n')
 f.write('The institute names in the left columns are hyperlinks to the respective webpages.\n')
-titles = ['Active Programs', 'Yet to be Declared', 'Currently Inactive/Closed']
+titles = ['Active Programs', 'Currently Inactive/Closed', 'Yet to be Declared']
+files = sorted(files)
 assert len(titles) == len(files)
 
 for title,file in zip(titles,files):
